@@ -43,12 +43,13 @@
             cursor: pointer;
             width: 100px;
             position: absolute;
+            font-family: 'Lucida Handwriting', monospace;
         }
         #yes {
-            background-color: lightgreen;
+            background-color: whitesmoke;
         }
         #no {
-            background-color: lightcoral;
+            background-color: whitesmoke;
             
         }
         #message {
@@ -61,9 +62,11 @@
 </head>
 <body>
     <h1>Will you be my Valentine?</h1>
-    <img src="ye.png">
+ 
+    <img id="valentineImage" src="sa.png">
+
     <audio controls autoplay> 
-        <source src="Sad Hamster.mp3" type="audio/mp3">
+        <source src="hhhh.mp3" type="audio/mp3">
         </audio>
     <div id="message"></div>
     <div class="button-container">
@@ -106,13 +109,18 @@
                 yesButton.style.left = originalYesPosition.left;
                 yesButton.style.top = originalYesPosition.top;
                 message.innerText = yesMoves[yesIndex];
-                yesButton.onmouseover = null; // Stop moving
+                yesButton.onmouseover = null; 
             }
         }
 
         function confirmYes() {
             if (yesIndex >= 12) {
+                valentineImage.src = "asdas.jpg"; 
                 alert("Hope you enjoyed this simple invitation! See you on feb 15 Ga! ❤️");
+                valentineImage.style.width = "500px"; 
+                valentineImage.style.height = "auto"; 
+                document.getElementById("message").innerHTML = "Yey! ❤️";
+
             }
         }
         function change() {
