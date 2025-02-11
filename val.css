@@ -1,0 +1,35 @@
+h1 {
+    font-size: 2em;
+    color: red;
+}
+
+.button-container {
+    
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 30px;
+    gap: 20px;
+    left: 500px;
+}
+button {
+    font-size: 1.2em;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    width: 100px;
+    position: absolute;
+}
+#yes {
+    background-color: lightgreen;
+}
+#no {
+    background-color: lightcoral;
+    
+}
+#message {
+    font-size: 1.5em;
+    color: darkred;
+    margin-top: 10px;
+    height: 30px;
+}

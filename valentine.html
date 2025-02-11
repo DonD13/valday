@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Be My Valentine?</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+            flex-direction: column;
+            background-color: pink;
+            font-family: 'Lucida Handwriting', monospace;
+            text-align: center;
+            position: relative;
+        }
+        h1 {
+            font-size: 2em;
+            color: red;
+        }
+        img {
+            width: 700px;
+            height: auto;
+            margin-bottom: 20px;
+        }
+
+        .button-container {
+            
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            margin: 30px;
+            gap: 20px;
+            
+        }
+        button {
+            font-size: 1.2em;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            width: 100px;
+            position: absolute;
+        }
+        #yes {
+            background-color: lightgreen;
+        }
+        #no {
+            background-color: lightcoral;
+            
+        }
+        #message {
+            font-size: 1.5em;
+            color: darkred;
+            margin-top: 10px;
+            height: 30px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Will you be my Valentine?</h1>
+    <img src="ye.png">
+    <audio controls autoplay> 
+        <source src="Sad Hamster.mp3" type="audio/mp3">
+        </audio>
+    <div id="message"></div>
+    <div class="button-container">
+        <button id="yes" onmouseover="moveYesButton()" onclick="confirmYes()">Yes</button>
+    </div>
+    <div class="button-container">
+        <button id="no" onmouseover="change()">No</button>
+    </div>
+    
+    <script>
+        let yesButton = document.getElementById("yes");
+        let noButton = document.getElementById("no");
+        let message = document.getElementById("message");
+        let originalYesPosition = { left: "47.5%", top: "81.5%" };
+        let yesMoves = [
+            "You can't catch me!",
+            "Too slow!",
+            "Woops!",
+            "Nopeeee!",
+            "Not yet!",
+            "Flick faster!",
+            "You need to practice!",
+            "Play valo more!",
+            "Practice your flick!",
+            "Almost there!",
+            "Push through!",
+            "Last flick!",
+            "You may press now. ❤️"
+
+        ];
+        let yesIndex = 0;
+
+        function moveYesButton() {
+            if (yesIndex < 12) {
+                yesButton.style.left = Math.random() * 80 + "%";
+                yesButton.style.top = Math.random() * 80 + "%";
+                message.innerText = yesMoves[yesIndex];
+                yesIndex++;
+            } else {
+                yesButton.style.left = originalYesPosition.left;
+                yesButton.style.top = originalYesPosition.top;
+                message.innerText = yesMoves[yesIndex];
+                yesButton.onmouseover = null; // Stop moving
+            }
+        }
+
+        function confirmYes() {
+            if (yesIndex >= 12) {
+                alert("Hope you enjoyed this simple invitation! See you on feb 15 Ga! ❤️");
+            }
+        }
+        function change() {
+            noButton.style.left = Math.random() * 80 + "%";
+            noButton.style.top = Math.random() * 80 + "%";
+        }
+    </script>
+</body>
+</html>
+
